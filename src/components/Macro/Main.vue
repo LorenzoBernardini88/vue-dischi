@@ -57,8 +57,8 @@ export default {
 .container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px 25px;
+    justify-content: space-between;
+    gap: 20px 30px;
     padding: 50px 0;
 }
 </style>
