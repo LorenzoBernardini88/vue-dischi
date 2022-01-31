@@ -21,6 +21,27 @@ export default {
     .card{
         text-align: center;
         background: $color3;
-        padding: 10px 10px 0 10px;
-    }
+        width: 150px;
+        padding: 10px 10px 30px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img{
+            width: 90%;
+        }
+    }   .album_title{
+        margin-top: 10px;
+        color:#FCF1DB;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 15px;
+        }
+        .album_author{
+            margin-top:10px;
+        }
+        .album_author,
+        .album_year{
+            color: #6B7F7D;
+            font-size: 12px;
+        }
 </style>

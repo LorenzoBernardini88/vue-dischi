@@ -47,5 +47,7 @@ export default {
 .container{
     display: flex;
     flex-wrap: wrap;
+    gap: 40px;
+    padding: 50px 0;
 }
 </style>
