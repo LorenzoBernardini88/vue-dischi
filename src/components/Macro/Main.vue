@@ -1,10 +1,16 @@
 <template>
-    <div class="container"></div>
+    <div class="container">
+        <MainContent/>
+    </div>
 </template>
 
 <script>
+import MainContent from '../commons/MainContent.vue'
 export default {
-    name:'Main'
+    name:'Main',
+    components:{
+        MainContent
+    }
 }
 </script>
 
