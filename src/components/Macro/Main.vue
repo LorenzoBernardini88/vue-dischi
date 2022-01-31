@@ -5,12 +5,36 @@
 </template>
 
 <script>
-import MainContent from '../commons/MainContent.vue'
+import MainContent from '../commons/MainContent.vue';
 export default {
     name:'Main',
+    data() {
+        return{
+            apiURL : "https://flynn.boolean.careers/exercises/api/array/music",
+            cardArray: [],
+        }
+    },
     components:{
         MainContent
+    },
+    created(){
+        this.getCards();
+    },
+    methods:{
+        getCards(){
+            axios
+                .get(this.apiURL)
+                .then( (risposta) => {
+                    // handle success
+                    this.cardArray = risposta.data;
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                });
+        }
     }
+
 }
 </script>
 
