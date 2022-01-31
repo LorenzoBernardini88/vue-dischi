@@ -1,10 +1,14 @@
 <template>
     <div class="container">
-        <MainContent/>
+        <MainContent 
+        v-for="(album,indice) in cardArray"
+        :key="indice"
+        :spotify="album"/>
     </div>
 </template>
 
 <script>
+import axios from "axios";
 import MainContent from '../commons/MainContent.vue';
 export default {
     name:'Main',
@@ -26,7 +30,7 @@ export default {
                 .get(this.apiURL)
                 .then( (risposta) => {
                     // handle success
-                    this.cardArray = risposta.data;
+                    this.cardArray = risposta.data.response;
                 })
                 .catch(function (error) {
                     // handle error
