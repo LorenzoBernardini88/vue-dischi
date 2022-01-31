@@ -1,6 +1,6 @@
 <template>
     <div class="logo_cont">
-        <img src="" alt="">
+        <img src="../../assets/img/spotify_logo.png" alt="">
     </div>
 </template>
 
@@ -14,7 +14,12 @@ export default {
 @import '../../assets/style/vars.scss';
 .logo_cont {
     background: $color2;
-    padding: 10px 20px;
+    padding: 5px 10px;
+    img{
+        height: 50px;
+        width: 50px;
+        
+    }
 }
 
 </style>
