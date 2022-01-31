@@ -1,25 +1,33 @@
 <template>
-    <div class="container">
-        <MainContent 
-        v-for="(album,indice) in cardArray"
-        :key="indice"
-        :spotify="album"/>
+    <div >
+        <div v-if="!loading" class="container">
+            <MainContent 
+            v-for="(album,indice) in cardArray"
+            :key="indice"
+            :spotify="album"/>
+        </div>
+        <Loader v-else />
     </div>
 </template>
+
 
 <script>
 import axios from "axios";
 import MainContent from '../commons/MainContent.vue';
+import Loader from "../commons/Loader.vue"
 export default {
     name:'Main',
     data() {
         return{
             apiURL : "https://flynn.boolean.careers/exercises/api/array/music",
             cardArray: [],
+            loading : true,
+            
         }
     },
     components:{
-        MainContent
+        MainContent,
+        Loader
     },
     created(){
         this.getCards();
@@ -31,6 +39,8 @@ export default {
                 .then( (risposta) => {
                     // handle success
                     this.cardArray = risposta.data.response;
+                    this.loading = false;
+                    
                 })
                 .catch(function (error) {
                     // handle error
@@ -47,7 +57,8 @@ export default {
 .container{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px 40px;
+    justify-content: space-around;
+    gap: 20px 25px;
     padding: 50px 0;
 }
 </style>

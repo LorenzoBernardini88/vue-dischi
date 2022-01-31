@@ -21,8 +21,8 @@ export default {
     .card{
         text-align: center;
         background: $color3;
-        width: 150px;
-        padding: 10px 10px 30px 10px;
+        width: 160px;
+        padding: 10px 10px 40px 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
