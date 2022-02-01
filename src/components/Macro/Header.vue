@@ -5,7 +5,7 @@
 
         <img src="../../assets/img/spotify_logo.png" alt="">
         </div>
-        <Select/>
+        
     </header>
 </template>
     
@@ -13,19 +13,9 @@
 
 
 <script>
-import Select from '../commons/Select.vue';
+
 export default {
     name: 'Header',
-    data() {
-        return{
-            apiURL : "https://flynn.boolean.careers/exercises/api/array/music",
-            
-            
-        }
-    },
-    components:{
-        Select
-    }
 }
 </script>
 

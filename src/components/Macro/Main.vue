@@ -1,5 +1,6 @@
 <template>
     <div >
+        <Select/>
         <div v-if="!loading" class="container">
             <MainContent 
             v-for="(album,indice) in cardArray"
@@ -14,7 +15,8 @@
 <script>
 import axios from "axios";
 import MainContent from '../commons/MainContent.vue';
-import Loader from "../commons/Loader.vue"
+import Loader from "../commons/Loader.vue";
+import Select from '../commons/Select.vue';
 export default {
     name:'Main',
     data() {
@@ -27,7 +29,8 @@ export default {
     },
     components:{
         MainContent,
-        Loader
+        Loader,
+        Select
     },
     created(){
         this.getCards();
@@ -54,6 +57,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../assets/style/vars.scss';
+
 .container{
     display: flex;
     flex-wrap: wrap;
