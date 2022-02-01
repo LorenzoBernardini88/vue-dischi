@@ -36,8 +36,11 @@ export default {
         this.getCards();
     },
     computed:{
-        albumFiltrati(){
-            return this.cardArray.filter( (cover) => {
+        albumFiltrati(){            
+
+            if( !this.selectGenre ) return this.cardArray 
+
+            return this.cardArray.filter( (cover) => {                
                 return cover.genre.includes(this.selectGenre);
             });
         }
