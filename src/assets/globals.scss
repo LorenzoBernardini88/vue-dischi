@@ -1,5 +1,5 @@
-@import './style/vars.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import "./style/vars.scss";
 
 *{
     margin: 0;
@@ -9,7 +9,9 @@
 body{
     font-family:'Roboto', sans-serif ;
     font-size: 20px;
+    background: $color1;
 }
+    
 .container{
     width: 70%;
     margin:0 auto;

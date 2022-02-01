@@ -21,7 +21,5 @@ export default {
 
 <style lang="scss">
 @import './assets/globals.scss';
-body{
-    background: $color1;
-}
+
 </style>
