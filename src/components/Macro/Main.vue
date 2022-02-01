@@ -1,9 +1,9 @@
 <template>
     <div >
-        <Select/>
+        <Select @seleziona="filtraAlbum"/>
         <div v-if="!loading" class="container">
             <MainContent 
-            v-for="(album,indice) in cardArray"
+            v-for="(album,indice) in albumFiltrati"
             :key="indice"
             :spotify="album"/>
         </div>
@@ -24,7 +24,7 @@ export default {
             apiURL : "https://flynn.boolean.careers/exercises/api/array/music",
             cardArray: [],
             loading : true,
-            
+            selectGenre:""
         }
     },
     components:{
@@ -34,6 +34,13 @@ export default {
     },
     created(){
         this.getCards();
+    },
+    computed:{
+        albumFiltrati(){
+            return this.cardArray.filter( (cover) => {
+                return cover.genre.includes(this.selectGenre);
+            });
+        }
     },
     methods:{
         getCards(){
@@ -49,6 +56,10 @@ export default {
                     // handle error
                     console.log(error);
                 });
+        },
+        filtraAlbum(inputSelect){
+            this.selectGenre = inputSelect;
+            console.log(inputSelect);
         }
     }
 

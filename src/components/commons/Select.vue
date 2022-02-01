@@ -1,6 +1,6 @@
 <template>
     <div class="slc_cont">
-        <select>
+        <select v-model="option" @change="$emit('seleziona',option)">
             <option value=""></option>
             <option value="rock">Rock</option>
             <option value="pop">Pop</option>
@@ -12,7 +12,12 @@
 
 <script>
 export default {
-    name: 'Select'
+    name: 'Select',
+    data() {
+        return{
+            option: ""
+        }
+    }
 }
 </script>
 
