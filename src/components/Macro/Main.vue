@@ -38,11 +38,14 @@ export default {
     computed:{
         albumFiltrati(){            
 
-            if( !this.selectGenre ) return this.cardArray 
-
+            if( this.selectGenre == 'All' ){
+                return this.cardArray 
+                } 
+                
             return this.cardArray.filter( (cover) => {                
                 return cover.genre.includes(this.selectGenre);
             });
+
         }
     },
     methods:{
