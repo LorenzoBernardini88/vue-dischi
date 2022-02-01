@@ -1,6 +1,7 @@
 <template>
-    <div >
-        <Select @seleziona="filtraAlbum"/>
+    <div class="general" >
+        <Select 
+            @seleziona="filtraAlbum"/>
         <div v-if="!loading" class="container">
             <MainContent 
             v-for="(album,indice) in albumFiltrati"
@@ -74,7 +75,9 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../assets/style/vars.scss';
-
+.general{
+    text-align: center;
+}
 .container{
     display: flex;
     flex-wrap: wrap;
